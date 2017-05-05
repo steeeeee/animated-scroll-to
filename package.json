@@ -1,7 +1,7 @@
 {
-  "name": "animated-scroll-to",
-  "version": "1.0.1",
-  "description": "Simple, plain JavaScript animated window scroll",
+  "name": "animated-scroll-to-horizontal",
+  "version": "1.0",
+  "description": "Simple, plain JavaScript animated horizontal window scroll. Forked from https://github.com/Stanko/animated-scroll-to.git",
   "main": "animated-scroll-to.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Stanko/animated-scroll-to.git"
+    "url": "git+https://github.com/steeeeee/animated-scroll-to.git"
   },
   "keywords": [
     "scroll",
@@ -19,7 +19,7 @@
   "author": "Stanko",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Stanko/animated-scroll-to/issues"
+    "url": "https://github.com/steeeeee/animated-scroll-to/issues"
   },
   "homepage": "https://github.com/Stanko/animated-scroll-to#readme",
   "devDependencies": {

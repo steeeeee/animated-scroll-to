@@ -15,13 +15,13 @@ function animateScrollTo(desiredOffset, userOptions = {}) {
   });
 
   // get cross browser scroll position
-  const initialScrollPosition = window.scrollY || document.documentElement.scrollTop;
-  // cross browser document height minus window height
+  const initialScrollPosition = window.scrollX || document.documentElement.scrollLeft;
+  // cross browser document width minus window width
   const maxScroll = Math.max(
-    document.body.scrollHeight, document.documentElement.scrollHeight,
-    document.body.offsetHeight, document.documentElement.offsetHeight,
-    document.body.clientHeight, document.documentElement.clientHeight
-  ) - window.innerHeight;
+    document.body.scrollWidth, document.documentElement.scrollWidth,
+    document.body.offsetWidth, document.documentElement.offsetWidth,
+    document.body.clientWidth, document.documentElement.clientWidth
+  ) - window.innerWidth;
 
   // If the scroll position is greater than maximum available scroll
   if (desiredOffset > maxScroll) {
@@ -78,13 +78,13 @@ function animateScrollTo(desiredOffset, userOptions = {}) {
       // Scroll to a new position
       // And request a new step
 
-      window.scrollTo(0, scrollPosition);
+      window.scrollTo(scrollPosition, 0);
       requestID = requestAnimationFrame(step);
     } else {
       // If the time elapsed or we reached the desired offset
       // Set scroll to the desired offset (when rounding made it to be off a pixel or two)
       // Clear animation frame to be sure
-      window.scrollTo(0, desiredOffset);
+      window.scrollTo(desiredOffset, 0);
       cancelAnimationFrame(requestID);
 
       // Remove listeners

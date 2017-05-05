@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", {
 // desiredOffset - page offset to scroll to
 // speed - duration of the scroll per 1000px
 function animateScrollTo(desiredOffset) {
-  var userOptions = arguments.length <= 1 || arguments[1] === undefined ? {} : arguments[1];
+  var userOptions = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
   var defaultOptions = {
     speed: 500,
@@ -22,9 +22,9 @@ function animateScrollTo(desiredOffset) {
   });
 
   // get cross browser scroll position
-  var initialScrollPosition = window.scrollY || document.documentElement.scrollTop;
-  // cross browser document height minus window height
-  var maxScroll = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight) - window.innerHeight;
+  var initialScrollPosition = window.scrollX || document.documentElement.scrollLeft;
+  // cross browser document width minus window width
+  var maxScroll = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth) - window.innerWidth;
 
   // If the scroll position is greater than maximum available scroll
   if (desiredOffset > maxScroll) {
@@ -85,13 +85,13 @@ function animateScrollTo(desiredOffset) {
       // Scroll to a new position
       // And request a new step
 
-      window.scrollTo(0, scrollPosition);
+      window.scrollTo(scrollPosition, 0);
       requestID = requestAnimationFrame(step);
     } else {
       // If the time elapsed or we reached the desired offset
       // Set scroll to the desired offset (when rounding made it to be off a pixel or two)
       // Clear animation frame to be sure
-      window.scrollTo(0, desiredOffset);
+      window.scrollTo(desiredOffset, 0);
       cancelAnimationFrame(requestID);
 
       // Remove listeners
