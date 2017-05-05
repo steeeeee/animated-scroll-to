@@ -1,6 +1,6 @@
 {
   "name": "animated-scroll-to-horizontal",
-  "version": "1.0",
+  "version": "1.0.1",
   "description": "Simple, plain JavaScript animated horizontal window scroll. Forked from https://github.com/Stanko/animated-scroll-to.git",
   "main": "animated-scroll-to.js",
   "scripts": {
